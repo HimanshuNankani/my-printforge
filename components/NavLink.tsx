@@ -1,18 +1,13 @@
 "use client";
 
+import { NavLinkProp } from "@/lib/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 
-export default function NavLink({
-  href,
-  children,
-}: {
-  href: string;
-  children: React.ReactNode;
-}) {
+export default function NavLink({ href, children, exact }: NavLinkProp) {
   const pathname = usePathname();
-  const linkColor = pathname.startsWith(href)
+  const linkColor = (exact ? pathname === href : pathname.startsWith(href))
     ? "text-orange-400"
     : "text-gray-700";
 
