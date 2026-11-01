@@ -1,13 +1,10 @@
 import { ModelGridProp } from "@/lib/types";
 import ModelsCard from "./ModelsCard";
 
-export default function ModelsGrid({
-  models,
-  title = "3D Models",
-}: ModelGridProp) {
+export default function ModelsGrid({ models, title }: ModelGridProp) {
   return (
     <div className="container px-4 py-8 mx-auto">
-      <h1 className="mb-8 text-3xl font-bold">{title}</h1>
+      <h1 className="mb-8 text-3xl font-bold">{title || "3D Models"}</h1>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {models.map((model) => {
           return <ModelsCard key={model.id} model={model} />;

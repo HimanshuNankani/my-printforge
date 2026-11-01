@@ -30,8 +30,16 @@ export type ModelsPageProp = {
   params: Promise<{ id: number }>;
 };
 
+export type ModelsProp = {
+  searchParams: Promise<{ search?: string }>;
+};
+
 export type NavLinkProp = {
   href: string;
   children: React.ReactNode;
   exact?: boolean;
+};
+
+export type SearchFormProp = {
+  searchValue?: string;
 };
